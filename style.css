@@ -1,0 +1,476 @@
+/*
+---------------------------------------TEORIA----------------------------------------------
+	c=cascade
+	s=style
+	s=sheets 
+	)
+	 
+---------padding-----------
+		padding: 20x;(top,botton,left,right)               padding: top left;         padding: top right/left bottom;
+
+	a los elementos en blocke se les puedes dar width y height margin paddgin etc.
+	a los elemenetos inline no se les puede dar ancho ni alto
+	a los elementos inline se les puede dar margin solo de manera horizontal y padding de manera natural
+	a los elementos en block solo margin a los costados si tienen espacio
+
+-------------margin-----------
+	 margin:auto(para centrar contenido de manera horizontal)
+
+----------border------------
+		ocupa un lugar real a diferencia del outline
+		outline: 10px solid blue(para hacer bordes sin sobreponer en caso de que sea 
+		un box-sizing: content-box sino fantasmas o transpuestos)
+		outline-offset: 10px;(distancia alejada que se mostrara la caja)
+		border-radius: 2em; /*10px,50%,2em.
+
+------------------------------BOX MODEL--------------------------
+  box-sizing: content-box(al añadir borde este aumentara el tamaño de la cajaa segun el borde);
+	box-sizing: border-box(aca se mantendria el borde pero ocupando espacio de la caja);
+	inline=elementos en linea no ocupan mucho solo <el que necesitan>(si no hay contenido no existen)
+	block=ocupan de extremo a extrema de la linea(h1,h2)(no se pueden juntar blokes)
+	inline-block=para comportarse como inline pero adquirir las propiedades del block podemos 
+	darle un ancho y alto y poner un elemento al lado del otro
+	al poner position: absolute el elemento ya obtiene las propiedade del block;
+	con fixed el elemento perdera sus medidas y su espacio reservado si no tenia por defecto
+	absolute relative fixed o sticky si se aplica los elementos obtendran top left right bottom
+	table=que se comporte como tabla
+	inline-table=que se comporte como tabla en linea(bloques en linea o separados)
+	inline-flex
+	grid-flex
+
+------------shadow---------
+	box-shadow: inset 10px 30px 10px 10px #000;
+	       por dentro ejex,ejey,contraste(oscuro=0, bajo>0),grosor,color
+	text-shadow: 2px 2px 7px #fff,2px 2px 7px #fff,2px 2px 7px #fff;(para aumentar la intensidad se copia)
+				  x,y,contraste,color
+
+--------------------------------z-index-------------------------------
+
+z-index: 50;                 
+se recomienda usar un z-index de por lo menos 50 para las cajas y asi dar prioridad a cajas 
+								determinadas
+para sobreponer al padre sobre el hijo la unica manera es dandole al hijo 
+	un valor de z-index: -1 es unica manera y para el padre sin z-index definido 
+
+------------------overflow-----------------------
+	overflow: auto;(detecta si el contenido sobrepasa podamos scrollear)
+	overflow: scroll;(pone un scroll a la caja)
+	overflow: hidden;(oculta todo lo exedente de la caja)
+	overflow-y: scroll;
+	overflow-x: hidden;(para ocultar el scroll)
+
+--------------------pseudo elementos------------------------------
+--------------pseudo-elemento-------------------------
+
+					-----------------------focus------------------------
+	-selector(input):focus{       sirve para diseñar el imput ya sea tamaño color o fondo
+			diseñar 
+	}
+
+		-selector:active{
+			background: blue;
+			width: 600px;
+	};
+	-a: link{        (si no fue visitado)   		-a: visited{ 	(si fue visitado)	
+	   	color: red; 																	color: skyblue;				solo si la pagina existe
+ 	    };                                          };		
+	-::first-line{}solo afecta a la primera linea tenga el tamaño q tenga
+	-::first-letter{}Solo afecta a la primer caracter
+	-::placeholder{color,tamaño,background}; para seleccionar el placeholder
+	-::selection{};afecta a lo que se selecciona con el puntero(por defecto se selecicona
+	un background azul y letras blancas)
+	:hover(modifica cuando se pasa el mouse por encima)
+	pseudoelementos=se tiene una clase .clase::before{} .clase::after{};
+	-			::before{ 									-selector::after{
+		content: "antes del elemento";       		content: "despues del elemento";
+	   }														    							 }
+       							para estos 2 no se puede seleccionar con el puntero
+
+---------------------------------FLEX BOX-----------------------------------
+	le damos propiedades al contenedor que afecta a sus hijos directamente o conocido como items)
+ 		-display: flex;
+	main axis=eje x   -x=main-start  x+=main-end
+ 	cross aixs=eje y  -y=cross-start x+=cross-end
+ 		------------aling-items--------------------una linea
+		aling-items: flex-start;(por defecto items arriba)
+		aling-items: center;(centra los items verticalmente en un contenedor)
+		aling-items: flex-end;(pone al final los items)
+		aling-items: stretch;(por defecto)
+
+ 		------------justify-content---------------
+		justify-content: flex-start,flex-end,flex-center,;(por defecto)
+		justify-content: space-around;(centra los margenes contando de cada caja independientemente)
+		justify-content: space-between;(ajustar las cajas con el mismo espacio maximo posible de sepracion)
+		justify-content: space-evenly;(espacio igual al inicio y entre cajas)
+	------------aling-content------------------varias lineas
+		aling-content: flex-start,center,flex-end;
+		
+	-gap:10px;(distancia entre contenidos dentro del container)
+	-flex direction: column,row;(para cambiar el sentido de el main axis a vertical)
+	-flex direction: row-reverse,column-reverse;(para ivertir el sentido de izquierda a derecha)
+	-flex-wrap: wrap;(mantiene el tamaño de los itens o cajas fijas y bota abajo cuando se reduce la resolucion)
+	-flex-wrap: wrao-reverse;(es lo mismo pero se van arriba)
+
+	----------------------para los items--------------------------
+	-aling-self: flex-start,center,end,baseline(baseline igual que el end)
+		-flex-grow: 1,2,3;(es para que los items ocupen todo es espacio sobrante de manera proporcional el width
+		va creciendo a medida que se agranda y se queda fijo segun el min-width)
+		-flex-basis : 300px;(tiene mas gerarquia que el width en un flex)	
+		-flex-shrink: 2;(se elige que caja sedera mas espacio del espacio requerido para todas)
+		-order: 0-infinito;(apunta al main aixs osea el elemento que sea mas mayor va primero)
+
+
+	-----------------------------------grid-----------------------------------
+		-----------------ALINEAZION DE GRID----------------------------
+		al container
+		a las celdas
+	   		aling-items
+			justify-items
+		a las grillas o rows columns
+			justify-content: space-around,space-evenly,space-between;
+	   		aling-content ,, ,, ,,
+		a una celda
+		-aling-self: start,center,end;(de manera vertical solo una celda respecto a su posicion)
+		-justify-self: start,center,end;(de manera horizontal)respecto a las celdas	
+		-grid-template-rows,columns:px,em,auto,1fr y % simplificando repeat(4,150px);
+		-gap: 10px;(es como un margin pero solo entre celdas no afecta al borde del grid)
+		-grid-column,row-gap: 10px;
+		-grid-column,row: 1/span 3;no elimina la celda que ocupa simplemente se queda su espacio empujandolo
+		-grid-template-columns: repeat(3,max-content o min-content); (el tamaño del contenido)
+		-grid-template-coñumns: repeat(3, minmax(100px, 300px));minmax(min-content, 1fr)
+		-grid-template-columns: repeat(auto-fill, minmax...);(genera la cantidad de columnas vacia para rellenarlas que puedan ocupar seguira generando nuevas columnas vacias cada ves que haya un espacio del min
+		todas las celdas,mas grande el width del vw mas columnas)
+		-grid-template-columns: repeat(auto-fit);(es lo mismo q auto fill pero este lo escala a la pantalla o 
+		tamaño del container ocupando todo el espacio si hubiese un fr cuando hay menos celdas para ocupas en cambio el auto fill matiene el tamaño)
+		place-self: aling justify;para resumir las 2 de arriba
+
+		------------------GIRD-AREAS-----------------------------------------
+		grid-template-areas: "header header header"     3x3
+							  				 "main   main   aside"
+							 					 "footer footer footer";
+		en los items
+		.gird-header{ 
+			grid-area: header;
+		}
+		.gird-main{
+			grid-area: main;
+		}
+		tambien se puede usar 
+		.grid-header{
+			grid-area: fila1 columna 1 fila 2 columna 2;(para definir el area q ocupara)
+		}
+--------------------fixed--------------------------------
+	position: fixed; para sobreponer y fijar la posicion de una caja o box
+
+	body{
+		padding-top: 100px;
+	}
+
+----------------sticky-----------------------------------
+	position: sticky; es igual que el fixed pero este tiene su espacio reservado 
+	como un relative relativo a la caja q lo contenga puede aparecer al medio o final de la pagina y empezar
+	a fijarse bajando el scroll no se fijara al subir la pagina. continuara segun sea el contenido de la caja 
+	que lo contenga importante top: 0;
+
+-----------------------------RESPONSIVE DESING-------------------------------
+		trabaja con estructuras flexibles(contenedores flexibles,imágenes y videos flexibles)
+		@media=media queries
+		orientacion: landscape(mas ancho que largo), portrait(mas largo que ancho dispositivos moviles);
+		
+		@media screen and(min-width: 400px)...and p and p{
+			.div-responsive{
+				background-color: red;
+			}
+		}
+
+------------------------------VARIABLES-----------------------------------	
+	:root{
+		--nombreVariable: valor(color);
+	}
+	-las variables creadas dentro de etiquetas solo tendran el alcanze para esa misma etiqueta
+	-para pasarlo por parametro ej.
+		background: var(--nombreVariable);
+
+
+-----------------------TRANSFORM----------------------------------
+	transform: rotate(grados + o - ej.-10deg,10deg);
+	transform no consume muchos recursos es mejor que magin padding left right bottom
+	transform: translateX(50px);
+	transform: translateY(50px);
+	transform: translate(50px,100%);
+	transform: scale(x,y)o directamente(2.0);(duplica su tamaño)
+	transform: skew(X,Y)(30deg);(deforma la caja)	 
+
+----------------------------background----------------------------
+		
+	-background: linear-gradient(to top,transparent,color);
+
+------------------------------EXTRAS-----------------------------
+	-----------------------------------font-----------------------------------
+		font-size: 2em ; tamaño de las letras
+		font-family: (cursiva,georgia,gotica);tipografia o fuente de las letras 
+		font-weight: 400,900,200,700; es el grosor de los caracteres
+
+	------------------------------------text------------------------------------
+		text-align: center,top,right,bottom;(centrar texto o content)
+    text-align:justify(espacia el texto para que cada linea tenga el mismo ancho)
+		text-decoration: none;(para quitar subrayado de los a o references)
+		text-transform:uppercase;(para poner en mayuscula un texto con CSS
+
+
+
+	color:inherit;(para heredar losvalores del padre)
+	color:initial;(para desheredar
+		-min-width: es el ancho minimo que puede tener el item menos no;
+	 para que las imagenes no aparezcan pixeladas en dispositivos de pantalla grande reducirlos a la mitad
+	el vh,w es solo toda la pantalla que se ve o es visible no incluye el boddy
+	[href]{
+		propiedad:valor;
+	}
+
+	[href="valor"]{
+		propiedad:valor;
+	}
+
+	.container > p{ (hijos directos)
+		propiedad:valor;
+	}
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+*									mediaquery
+	@media (min-width: 570px){
+
+	}
+	@media (min-width: 970px){
+
+	}
+	@media (orientacion:landscape) and (min-width:)
+
+*							Calc
+	calc(50% -20px)   
+
+
+
+
+*							tooltips
+	ventanas emergentes posicion absolute
+	border top a una caja sin contenido es como un triangulo o una cartita para hacer una flechita
+
+
+
+
+/*o
+	img= las imagenes no se salen del contenido de la caja se autoajustan
+	-para moverla de la bse o caja usamos el position=relative
+	opacity:0.0 a 1;
+		vmin-vmax
+		
+		max-width:100%;(se asegura que la imagen no sea mas grande que el contenedor)
+    height:auto;(hace que la imagen mantenga su relación de aspécto original)
+		display:none; o visibility:hidden; (oculta contenido para todos)
+    width:0px; height:0px; (elimina el contenido del flujo de documentos)
+		
+
+
+
+----------------------------------line----------------------------------------
+		line-height: 1(normal);tamaño q ocupa las letras, la caja q lo contiene crecera proporcional al aumento 2=x2
+		line-heigth=altura o distancia entre lineas
+
+
+--------------------transition---------------------------
+		transition: background 1s, width 0.2, height1;     
+ 	  transition: all 1s; para todo
+ 	  transition-delay: 3s;			
+		
+
+--------------------------------object-Fit---------------------------------
+ 	object-fit: contain; =(viene por defecto) la imagen se ajusta a la caja reduciendo su tamaño pero conservando su width,height
+ 	object-fit: cover; =la imagen se ajusta al contenedor cubriendolo todo sin recortar
+ 	object-fit: none; = pone la resolucion original sin importar la caja
+ 	object-fit: scale-down; =la mas chiquita entre none y contain
+--------------------------------object-position----------------------------
+	ej.cover se queda con top,left,right,bottom tambien moviendo px y em 
+
+----------------------------FLEX BOX---------------------------
+
+		aling-content: baseline;(tira abajo los items en content)sino no se podria con un flex-end(teniendo
+		un flex wrap reverse)
+
+		align-items: baseline;(alinea en base o donde se asienta el contenido)
+		
+	  
+		-flex: grow shrink basis; para simplificar los 3 anteriores
+		
+
+-----------------------------GRID------------------------------- 																				                                                                                                                                      cuatro veces 
+		
+		-grid-auto-column o rows=es lo mismo pero es para los grids explicitos
+		-grid-auto-flow: column;(para los grids explicitos o sobarantes se superpongan como columnas)
+		-grid-auto-flow: dense;(se autocompleta espacios vacios con la celda mas cercana)
+	
+
+--------------------------------TRANSITION-------------------------------------
+		.padre:hover .hijo{
+			transform: translateX(100%);
+		} 
+		transition-property: all;(no recomendado por que consume muchos recursos)
+		transition-property: background;(que se va a transicionar)
+		transition-duration: 1s;(duracion de la transicion)
+		transition-delay: 1s;(tiempo de retardo para iniciar la transicion)
+		transition-timing-function: linear;(va a velocidad constante)			
+		transition-timing-function: ease;(arrancar con todo es el mas brusco y termina despacio)
+		transition-timing-function: ease-in;(arranca despacio y termina con todo)
+		transition-timing-function: ease-out;(arranca con todo y termina despacio lo opuesta a ease-in)
+		transition-timing-function: ease-in-out;(arranca despacio acelera y termina despacio)		
+
+
+
+-------------------------------ANIMACIONES------------------------------------
+	por defecto es ease la trancision
+
+		.caja{
+			animation-name: desplazarse;
+			animation-duration: 3s;
+			animation-direction: (normal,alternate,reverse,alternate-reverse);(0-100, 0-100-100-0, 0 - 100, 100-0-0-100	)
+			animation-timing-function: linear,ease,ease-in,ease-out;
+			animation-iteration-count: 3,34254,infinite;(cuntas veces se repetira la animacion)
+			animation-fill-mode: forwards;(se queda en 100)
+			animation-fill-mode: both;(empieza con 0 ignorando los valores predeterminados)
+			animation-timing-function: cubic-bezier(ejex,ejey,ejex,ejey);(se puede modificar al inspeccionar con el navegador pero investigalo para diseñar webs mas trabajadas)
+			animation-play-state: paused;  para la  animacion
+		}
+
+		@keyframes nombreClase{
+			0%{
+				left: 0;
+				background: red;
+			}
+			50%{
+				background: blue;
+			}
+			100%{
+				left: 80%;
+				background: green;
+			}
+		}
+
+		.caja: hover{ animation-play-state:paused; };
+------------------------------FILTER---------------------------------------
+	filter: blur(10px,1em);(desenfoque tanto en x,y)
+	filter: brightness(5);(nivel de brillo 0 nada(oscuro) 10 superbrillo)
+	filter: contrast(0);(nivel de constraste 0 nada(sin imagen) 10 full contraste)
+	filter: drop-shadow(10px 10px 5px #000);(a diferencia del box-shadow este da sombra a la misma imagen y no a la caja)dominar investiga
+	filter: grayscale();(escala de gris )
+	filter: hue-rotate(200deg);(para invertir colores)
+	filter: invert(%);(para invertir colores en grados)
+	filter: opacity(0.5);(opacidad)
+	filter: saturate(400%);(satura los colores hasta llevarlos a su punto mas fuerte)
+	filter: sepia(10);(parecido al gris)	
+
+ 
+------------------------BACKGROUND----------------------------
+
+	background-color: red;
+	background-image: url(https://fasdfasdgagsafga.com)
+	background-size: 50px o cover;tamaño de la imagen
+	background-repeat: no-repeat;(para no repetir la imagen si esta no escala bien)
+	background-clip: padding-box,content-box,border-box;(recorta la imagen desdes donde se va a mostrar)
+	background-origin: ,,       ,   ,,       ,     ,,  ;(crea la imagen a partir de ahi)
+	background-position: right top,top center,center bottom;(posiciona la imagen)  center center centra la imagen
+	background-attachmen: fixed;(la imagen toma como referencia el vp y se scrollea sin mover la imagen)
+	background-color: hsl(120, 100%, 50%);
+    color de 0 rojo a 360 blue,opacidad,luminocidad
+    background: linear-gradient(180deg, red, purple,skyblue,white);ta potente
+                        en que sentido empezara,colores que se iran degradando
+    						-repeating-linear-gradient(
+							      90deg,
+							      yellow 0px,
+							      blue 40px,
+							      green 40px,
+							      red 80px
+							    );
+
+--------------------------------CURSOR------------------------
+		cursor: pointer; valores en https://www.w3schools.com/cssref/tryit.asp?filename=trycss_cursor
+
+	.clase:hover > a{
+		se modifica el enlace a cuando hover en clase 
+	}
+
+-------------------------------EXTRAS------------------------
+	para separar las letras de manera horizontal
+		letter-spacing: 10px;
+	para que al mandar a un enlace no baje de manera brusca sino mas lenta 
+	.*{ se pone a todo o sea al body o *
+		scroll-behavior: smooth;
+	para que el usuario no pueda seleccionar texto
+		user-select: none;
+
+ 	------------efecto gota-------------
+		.container{
+			filter: contrast(30);
+			background-color: #fff;
+		}
+		.caja{
+			display: inline-block;
+			width: 150px;
+			height: 150px;
+			background: red;
+			margin: 40px;
+			border-radius: 50%;
+			filter: blur(20px);
+		}
+		.caja: first-child{
+			animation: traladar 3s alternate infinite;
+		}
+		@keyframes trasladar{
+			0%{
+				transform: translate(0);
+			}
+			100%{
+				transform: translate(160px);
+			}
+		}
+
+	
+*/	

@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="aprendiendo_css/normalize.css">
+    <link rel="stylesheet" href="aprendiendo_css/style.css">
+   
+    <title>Mi web</title>
+</head>
+<body>
+	<input type="search" placeholder="buscador">
+    <script src="codigo.js"></script>
+</body>
+</html>   
+
+
+
+
+
+
+
+
+
+
+
+<!--
+	
+*														Bootstrap
+	importar el css y el js
+--------------------------------------------TEORIA-----------------------------------------
+<!-h=hyper
+	  t=text
+	  m=markup
+ 	  l=lenguage
+	
+	etiquetas(indican parrafos,titulos,vinculos,links,secciones,cabezeras,cuerpo,etc.)
+	  -----------------------METADATOS--------------------------- 
+  -<meta charset="utf-8">(para definir la codificacion universal o para los acentos que en el ingles no existen)
+	-<meta name="keywords" content="harina,huevo,leche">(etiquetas de busqueda o para filtrar busquedas en google)
+	-<meta name="description" content="Alimentos S.A. Es una compañia destinada a brindar los mejores alimentos de calidad en tiempo y forma">
+	-<meta name="author" content="Andy Fernandez">
+	-<meta name="copyright" content="Facebook Inc.">
+	-<meta name="robots" content="noindex">(para aparecer en el buscador de google index o noindex para ser una pagina oculta)
+    -----------------------ETIQUETAS----------------------------
+  -lorem100=texto de 100 palabras
+  -<a href="enlace"><img src="enlace_imagen alt="pequeña descripcion de imagen"</a>
+  -strong=span
+  -<u></u>=subrayado de texto
+  -<em></em>=poner en cursiva la fuente(algo asi como letras gorticas)
+  -<s></s>=para tachar con una linea el texto
+  -alt="" para imegenes q ya tengan descripcion
+  -article=para temas independiendentes
+  -div=cuando no hay relacion en las secciones o articulos
+  -section=puede haber varias secciones del mismo tema o relacionados dentro de un article
+  -<fieldset>
+      <legend>relato o titulo pra elegir</legend>
+      conjunto de campos
+      ej. botones para selccionar
+    </fieldset>
+		-<time datetime="2016-09-15">Thursday, september 15<sup>th</sup></time>
+				(para especificar fechas sup es un subindice superior)
+		-<time datetime="27-04-2022">Publicado el 27-04-2022</time>
+
+	<input list="clase">
+	<datalist id="clase">
+		<option value="valor1"></option>
+		<option value="valor2"></option>
+		<option value="valor3"></option>
+		<option value="valor4"></option>
+		<option value="valor5"></option>
+	</datalist>
+
+	<picture></picture>   para crear fondors blancos de logos
+
+*                            Atributos Multimedia
+		-autoplay
+		-muted
+		-controls
+		-loop
+
+
+--------------------------------------------------ESTRUCTURA--------------------------------
+	<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<title>Mi pagina</title>
+		<link rel="icon" href="iconos/icono.ico">
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="aprendiendo_css/estilo.css">
+		<link href="https://fonts.googleapis.com/css2?family=Koulen&display=swap" rel="stylesheet"> importalo en css papu
+		<link rel="stylesheet" type="text/css" href="aprendiendo_css/normalize.css"><!para normalizar la paginatenemos q agregar el max-width:100%; en img
+		<script src="https://kit.fontawesome.com/62ea397d3a.js" crossorigin="anonymous"></script>																									
+	</head>
+	<body>		
+		<header class="header">
+			<nav class="nav">
+				<a class="nav__link" href="#"><img class="nav__link__img" src="#"></a>
+				<ul>
+					<li><a href="#footer">Footer<a/></li>
+					<li ><i class="fas fa-home"></i><a href="index.html">Inicio</a></li>
+					<li><a href="#about">Sobre Nosotros</a></li>	
+					<li><a href="#main">Explorar</a></li>
+					<select name="algo" id="algo">
+						<option value="seleccionar">seleccionar</option>
+						<option value="alat1">alta1</option>
+						<option value="media">media</option>
+						<option value="baja">baja</option>
+					</select>
+				</ul>
+			</nav>
+		</header>
+		<main id="main" class="cuerpo body clase3">
+			<section class="titulos">
+				<h1>Hola Mundo</h1><!-una sola ves para titulos
+				<h2>Hola Mundo</h2><!-podemos poner 4 omas para subtitulos
+				<h3>Hola Mundo</h3><!-podemos poner 4 omas para subtitulos
+				<h4>Hola Mundo</h4><!-ilimitadas-
+				<h5>Hola Mundo</h5><!-ilimitadas-
+				<h6>Hola Mundo</h6><--ilimitadas-
+			</section>
+			<section class="section_div">
+				<div class="section_div-first">
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta, saepe. Doloribus maiores animi unde fugit accusamus quam, deleniti vero aliquam. Earum asperiores voluptate aut perferendis iure temporibus, minima accusamus autem.</p>
+				</div>
+				<div class="section_div-nth(2)">
+					<p>Inventore suscipit vel eos tenetur nesciunt iusto explicabo impedit saepe natus repellat. Quos in laudantium totam alias neque voluptas veniam ipsam, laboriosam repellendus? Laboriosam enim recusandae omnis. Alias, sunt dignissimos!</p>
+				</div>
+				<div class="section_div-nth(3)"></div>
+				<div class="section_div--"></div>
+				<div class="section_div-nth(4)"></div>						
+				<div class="section_div-final">
+					<p>Iste quasi fugiat ipsa eveniet officia quod cumque quia nostrum debitis ex nesciunt excepturi mollitia error, molestiae illo sit fugit veritatis voluptatum. Facere porro vero minima dicta magnam, quidem ut.</p>
+				</div>
+			</section>
+			<section class="multimedia">
+				<img src="../imagenes/imagen.jpg" title="imagen local" alt="waifu de keyarga-sama" width="100px" >
+				<img src="https://pbs.twimg.com/media/ExvUhg4XIAcWj6Z.jpg" title="imagen de internet">
+				<audio controls autoplay loop>
+						<source src="primer audio">
+						<source src="segundo audio">
+						el navegador no pudo reproducir el audio
+				</audio>
+				<audio src="../audios/audio.mp3" controls></audio>
+			</section>
+			<table>
+				<tr>
+					<th><b>Nombre</b></th>
+					<th><b>apellido</b></th>
+					<th><b>sexo</b></th>
+				</tr>
+				<tr>
+					<td>Andy</td>
+					<td>fernandez</td>
+					<td>masculino</td>
+				</tr>
+				<tr>
+					<td>amy</td>
+					<td>gonzalez</td>
+					<td>femenino</td>
+				</tr>
+				<tr>
+					<td>dilantero II de la fuente reincorporada</td>
+					<td>gutierrez</td>
+					<td>masculino</td>
+				</tr>
+			</table>
+			<form action="/formulario puede ir a un servidor" method="POST"><!-get
+				<label for="nombre">Nombre</label>
+				<input type="text" value="juanito" id="nombre" name="nombre" placeholder="Nombre">
+				<label for="apellido">Apellido</label>
+				<input type="text" id="apellido" name="apellido" placeholder="Apellido">  
+				<input type="password" name="password" id="contraseña" required>
+				<input type="number">
+				<input type="email">
+				<input type="color">
+				<input type="range" min="1" max="5">
+				<input type="date">
+				<input type="time">
+				<input type="reset" name="reset"
+				<input type="radio"> 
+				<input type="search">search</input>
+				<input type="checkbox" disabled> 
+				<input type="file"> 
+				<label for="comentario">Comentario</label> <br>
+				<textarea id="comentario" placeholder="Escribe un comentario" name="comentario" cols="50" rows="10">Este es un comentario por defecto</textarea><br>
+				<button type="button" value="util para algo"><img src="imagenes/imagen.jpg" width="100px"></img>boton</button>
+				<button type="reset">tipo reset</button>
+				<button type="submit">sumbit</button>
+				<input type="submit">
+			</form>					
+			
+			<section class="container">
+				<div class="contenedor">
+					<div class="caja1">caja1</div>
+					<div class="caja2">caja2</div>
+					<div class="caja3">caja3</div>
+					<div class="caja4">caja4</div>
+					<div class="caja5">caja5</div>
+				</div>
+				<article>
+					<h2>El Blog De Anndy</h2>
+					<p class="wait"> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+				</article>
+			</section>
+			<section class="body_article">
+				<article>
+					<h1>Inicio</h1>
+					<h2>section in article</h2>
+					<p>t, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+				</article>
+				<article>
+					<hgroup>
+						<h1>TITULO DE ARTICULO</h1>
+						<h2>subtitulo</h2>
+					</hgroup>
+					<time datetime="10-10-2822">Fecha: 10-10-2822</time>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eius</p>
+				</article>
+				<footer> <!-este footer es de el articulo-
+					Comentarios (0)
+				</footer>
+			</section>	
+			<ol>
+				<li value="50">hola</li>
+				<li>qtal</li>
+				<li>como</li>
+				<li>estas</li>
+			</ol>
+			<table>
+				<thead>
+					<h2>TABLA</h2>
+				</thead>
+				<tbody>
+					<tr>
+						<th>Producto</th>
+						<th>Precio</th>
+					</tr>
+					<tr>
+						<td>Calzados de mi familia customizada a una pagina web</td>
+						<td>1000 bs.</td>
+					</tr>
+				</tbody>
+				<tfoot>
+					<td>Total</td>
+					<td>100 bs.</td>
+				</tfoot>
+			</table>
+		</main>
+		<aside id="about">
+			<h2>aside contenido extra</h2>
+			<p>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+				<br>
+				<i>Italica</i>
+				<strike>Tachada</strike>
+				<small>Chiquita</small>
+			</p>
+		</aside>
+		<footer>
+			<hr>
+			<h4><b>Copyright</b> Todos los derechos reservados</h4>
+			<p>Siguenos en nuestra redes <br> sociales</p>
+			<a href="https://instagram.com/luis/">Instagram</a>
+			<a href="https://instagram.com/luis/">Facebook</a>
+			<a href="https://instagram.com/luis/">twitter</a>
+			<h2 id="footer"><b>FOOTER</b></h2>
+			<h2 id="nombreID" nomAtributo="valor">segundo subtitulo h2</h2>
+			<h2 class="clase2"><b>b negrita dentro de un h2 <span>span</span></b></h2>
+		</footer>
+	</body>
+</html> -->
