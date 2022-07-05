@@ -1,4 +1,9 @@
 /*
+*                   para crear un proyecto en yarn con vite----------------------
+  yarn create vite
+  entramos al proyecto y luego yarn en consola
+  y code . para abrirlo en vsc
+
           !yarn instala dependencias de desarrollo antes del proyecto y crear el package.json de 
           !yarn dev para iniciar el proyecto en un local server
           !yarn build para sacarlo a produccion se crea la capeta dist y su contenido iria directo al hosting de la pagina
@@ -147,4 +152,10 @@ react trabaja en una sola via o en un solo elemento
             expect( getByTestId( 'valor de atributo' ).innerHTMl ).toContain(titulo)
             expect( screen.getByRole( 'heading', {level:1}) ).innerHTMl).toContain(titulo) 
             expect.any( String )
+          !mocs  simular hocks y custom hocks 
+            jest.mock(pathName)
+            Customhock.mockReturnValue({
+              elemento1: 'algo',
+              elemento2
+            })
 */

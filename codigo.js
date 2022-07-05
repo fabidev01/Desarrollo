@@ -214,6 +214,8 @@
 *                   Atributos multimedia
     multimedia.src = "http://url"
 *                   ATRIBUTOS DE IMPUTS
+    input.ref (es la referencia del objeto) referencia.current selecciona el nodo elemento
+    input o nodo.select(); te vota al input como seleccionado
     input.minlength="5" tamaño minimo de caracteres del input
     input.value valor del input
     input.type="color text number" modificar
