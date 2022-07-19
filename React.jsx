@@ -79,6 +79,10 @@ react trabaja en una sola via o en un solo elemento
       para retornar un li o un componente tenemos q poner un key
   *useEffect
       no puede contener una funcion asyncrona
+  *uselayoutEffect
+  *React.memo
+  *useMemo
+  *useCallback
 
 
 *                                       PRUEBAS UNITARIAS Y DE INTEGRACION                                                 
@@ -130,6 +134,8 @@ react trabaja en una sola via o en un solo elemento
           ]
         };
       4.instalar yarn add -D @babel/preset-react
+                    *beforeEach( ()  => {} ) antes de cada tests
+                    *beforeAll( ()  => {} ) antes de todos los tests
       !pueden ser:
         *render   se importa de render library/react    renderiza en el dom
             container es el objeto render es como un object nodo o document q contiene codigo html
@@ -139,6 +145,8 @@ react trabaja en una sola via o en un solo elemento
             getByTestId busca el valor de atributo de un elemento nodo
             toMatchSnapshot   crear una carpeta y un  archivo de copia toma una foto del componente
             getByRole('heading', {level:1})   muestra la etiqueta h1
+            getByLabelText('valor de aria-label');      aria-label='lo q sea en el tag'
+            .toHaveBeenCalledWith('valor con el cual ha sido llamado'); 
         *screen.los mismos de arriba
               screen.debug();  muestra el estado del dom
         *fireEvent.eventos
@@ -151,11 +159,49 @@ react trabaja en una sola via o en un solo elemento
             expect( getAllByText( subtitle ).length ).toBe(3)
             expect( getByTestId( 'valor de atributo' ).innerHTMl ).toContain(titulo)
             expect( screen.getByRole( 'heading', {level:1}) ).innerHTMl).toContain(titulo) 
+                                      'button', {name: 'increment'}
             expect.any( String )
           !mocs  simular hocks y custom hocks 
             jest.mock(pathName)
+            *para simularl el retorno en cada test obligatorio a no ser que se declare en el describe
             Customhock.mockReturnValue({
               elemento1: 'algo',
               elemento2
             })
+            *para simularl funciones jest de hooks o custom hooks si fueron llamadas
+                const jestFunction = jest.fn();
+            customHooks.mockReturnValue({
+              elemento1: 1,
+              funcion: jestFunction
+            })
+              ahora preguntar si ha sido llamado funcion mediante jestFunction
+
+                !jest.clearAllMocks() para limpiar todos los mocks se pone en el beforeEach mayormente
+
+*                                                  REDUCER                                               
+  !es una funcion que no puede ser asyncronas
+  !funcion pura sin depender de otras
+  !debe retornar un nuevo estado no debemos de mutarlo
+  !no debe llamar al localStorage o sessionStorage
+  usualmente recibe 2 argumentos o varios pero solo una accion
+              el valor inicial 
+              y la accion a ejecutar
+
+  const {objs, pathsa} = useReducer()
+
+*                                               useContext                                        
+       1 instalarlo en la documentacion de react router "yarn"
+       2 import { BrowserRouter } from "react-router-dom";
+
+       constex 
+       usercontext 
+       providercontext
+       !link
+       !navlink
+
+*---------------------------------------------Seccion 12 pruebas en customHooks---------------------------------------------------
+  const { resultado } = renderHook( ()=> customHook() ) ver con un clg resultado 
+  act( () => { funciones a ejecutar ej increment }   )
+  ! toma los valores de manera absoluta
+    result.current.counter obtenenmos los valores actuales 
 */

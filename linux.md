@@ -1,0 +1,1 @@
+ls -a= es para ver los archivos ocultos
