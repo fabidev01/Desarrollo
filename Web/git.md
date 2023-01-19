@@ -41,6 +41,8 @@ el la carpeta .git esta todo
   git checkout -- . reconstruira todo al ultimo commit
   git checkout -b ramab(para crear nuevas ramas del main)
   git checkout main(para cambiar de rama)
+  git checkout fichero o folder(para restaurar al ultimo commit)
+  git checkout id del commit(te mandara a ese commit)
   cat archivo1.txt mostrara el contenido del archivo
   git marge ramab(desde el main para traer los cambios desde una rama)
 ------------------Etapas--------------------
