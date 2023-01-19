@@ -1,0 +1,63 @@
+- what's going on 
+- how's everything
+- how's it going
+- what have you been up to?
+- what's new?
+- nice to meet you
+- long time no see
+- pleased to meet you
+- it's a pleasure to meet you 
+- pleased to make your acquaintance
+- that's a good question
+- where did you learn to do that?
+- let's do it together
+- how are you? 
+- how do you do?
+- how are you doing?
+- how have you been?
+- are you well? 
+- pretty good.
+- very well, thanks.
+- not bad
+- same old, same old
+- couldn't be better
+- i'd like to introduce myself 
+- let me introduce myself
+- my name's andy
+- i'm from Bolivia
+- i don't think we've met
+- can you tell me what happened?
+- could you tell me what happened?
+- do you know him?
+- would you happen to know where the hospital is?
+- i'd like to know what happened?
+- what do you do
+- what do you do for a living?
+- where do you work?
+- what is your occupation?
+- what kind of work do you do?
+- I'm a web developer
+- I work as a web developer
+- I work in technology
+- I'm unemployed
+- I'm a freelance developer
+- I'm retired
+- what do you like?
+- what do you do for fun?
+- what do you do in your free time?
+- what do you do in your spare time?
+- I like dancing
+- I enjoy dancing
+- I'm into parkour
+- I'm a huge fan of sports
+- I'm interested in languages
+- Really?
+- thst's interesting
+- no way? 
+- you're jocking!
+- I see
+- I have no idea
+- I have no clue
+- beats me
+- I can't help you there
+- your guess is as good as mine 

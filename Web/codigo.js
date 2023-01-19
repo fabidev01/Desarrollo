@@ -93,7 +93,11 @@
     parseInt()
     x %= 3  reciduo 2
     x**2=x`2
-    
+
+*                       Errores por consola 
+    throw new Error("algo ha salido mal")
+
+
 *                        JSON
     JSON=java script object notation
     cuando enviamos datos a un servidor o a otro lugar hay que serializar

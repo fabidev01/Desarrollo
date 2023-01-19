@@ -1,4 +1,7 @@
 /*
+* para desestructurar un objeto de un objeto
+  const { valor1, valor2, subObj:{subValor1, subValor2}, valor3} = objeto;
+
 *                   para crear un proyecto en yarn con vite----------------------
   yarn create vite
   entramos al proyecto y luego yarn en consola

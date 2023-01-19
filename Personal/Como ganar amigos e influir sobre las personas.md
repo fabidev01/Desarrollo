@@ -1,0 +1,3 @@
+- las criticas son inutiles ni siquiera las personas cuando cometen errores tan garrafales se autocritican a si mismas por que dana su sentido de importancia e iere su ego que es lo mas valioso que tienen las personas es por eso que nunca juzgo a una persona por lo mala que puede ser o los grandes errores que puede llegar a cometer
+- no juzgues si no quieres ser juzgado todos somos iguales y hariamos lo que hacemos en las mismas circunstancias
+- 
