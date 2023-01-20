@@ -55,3 +55,7 @@ el la carpeta .git esta todo
   donde se commitea los cambios
 *          Server
   ultima etapa para enviar a un servidor mayormente github
+
+-------------------gitignore--------------------
+* para ficheros con el mismo nombre en cualquier sitio
+  **/ nombre del fichero
