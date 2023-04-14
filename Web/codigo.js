@@ -1,5 +1,35 @@
-/* 
 
+/*
+
+*                         Javascript
+    - tipado dinamico debil
+            - let isDefined = true || null 
+            - let numero = 4
+                  numero = "alguito"
+
+            (permite jugar con las variables)
+
+
+*                       Tipos de datos de Javascript
+
+        *Primitivos (SE PASAN O COMPARAN POR VALOR)
+        - undefined // undefined
+        - true      // boolean
+        - 1         // number
+        - "string"  // string
+        - 2n        // bigInt
+        - Symbol(2) // symbol
+            *Especial o en debate
+            - null      // null    (null == null) // true
+
+        *Objects (SE PASAN O COMPARAN POR REFERENCIA) 
+        - typeof []              // 'object'
+        - typeof {}              // 'object'
+        - const set = new Map()   
+        - typeof set             // 'object'
+            *Especial o en debate
+            - typeof function(){} // 'function'
+        
 *                   Operador condicional ternario
     const es=(expresion logica)? "true" : "false";
 *                           imports
