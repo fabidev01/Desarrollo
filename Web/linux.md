@@ -10,5 +10,3 @@
   - mv nombreActual.txt nombreNuevo.txt(cambia el nombre del archivo)
   - cat archivo1.txt mostrara el contenido del archivo
 
-
-
