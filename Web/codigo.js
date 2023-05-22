@@ -22,6 +22,8 @@
             *Especial o en debate
             - null      // null    (null == null) // true
 
+
+
         *Objects (SE PASAN O COMPARAN POR REFERENCIA) 
         - typeof []              // 'object'
         - typeof {}              // 'object'
@@ -32,24 +34,34 @@
         
 *                   Operador condicional ternario
     const es=(expresion logica)? "true" : "false";
+    
 *                           imports
-    export obj,{array,function,loqsea}       export{obj as default,array,function,loqsea} varios
+    export obj,{array,function,loqsea}     
     import {obj,array,function,loqsea} from '.data/heroes';
-                o imp  shorthand 
+    -   o imp  shorthand 
     !por default
-            export default obj;
-            import obj from '../../../';
+    export default obj;
+    import obj from '../../../';
+    !tdoas a la vez
+    export{
+        obj as default,
+        array,
+        function,
+        loqsea
+    } 
 
 *              desestructuracion las funciones tambien pueden ser valores de arreglos o objetos 
     !de objetos
          *asignacion  desestructurante
     const {nombre,edad,clave} = persona;
-    console.log(nombre, edad, clave);   aca se sobreentiende que nombre: nombre
+    console.log(nombre, edad, clave);   aca se sobreentiende que nombre: nombre 
+
     const {nombre:nuevo, edad , clave} = persona;
     console.log(nuevo);
     
     const {nombre, edad, clave, latlng:{lat,lng}} = persona;
     console.log(nombre,edad, clave, lat,lng); 
+
          *parametro desestructurante
     const nombrePersona = ({nombre})=>{
         console.log(nombre);
